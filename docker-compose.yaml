@@ -1,0 +1,13 @@
+version: '2.1'
+services:
+    jupyter:
+        image: docker.io/library/judgeresearch-featurefeeder-dev
+        restart: 'no'
+        volumes:
+            - ./notebooks:/home/jovyan/JudgeResearch
+        ports:
+            - "8888:8888"
+        environment:
+            NB_UID: ${UID}
+            NB_GID: ${GID}
+            JUPYTER_TOKEN: JR
