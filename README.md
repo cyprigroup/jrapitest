@@ -19,4 +19,4 @@ docker-compose up
 
 ### Google Colab
 
-- [Launch in Colab]{https://colab.research.google.com/github/cyprigroup/jrapitest/blob/main/jrnotebooks/JR-API-Documentation.ipynb)
+- [Launch in Colab](https://colab.research.google.com/github/cyprigroup/jrapitest/blob/main/jrnotebooks/JR-API-Documentation.ipynb)
