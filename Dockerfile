@@ -15,8 +15,9 @@ RUN set -ex \
    # choose the Python packages you need
 #   'plotly==4.9.0' \
    'plotly' \
-#   'folium==0.11.0' \
+#   'folium==0.11.0' \ # specific version removed due to conflict on m1 mac
    'folium' \
+   'yfinance' \
    && conda clean --all -f -y \
    # install Jupyter Lab extensions you need
    && jupyter labextension install jupyterlab-plotly --no-build \
@@ -25,6 +26,11 @@ RUN set -ex \
    && rm -rf "/home/${NB_USER}/.cache/yarn" \
    && rm -rf "/home/${NB_USER}/.node-gyp" \
    && fix-permissions "${CONDA_DIR}" \
-   && fix-permissions "/home/${NB_USER}"
+   && fix-permissions "/home/${NB_USER}" \
+   # install coinbase SDK
+   && git clone https://github.com/resy/coinbase_python3.git \
+   && cd coinbase_python3 \
+   && python3 setup.py install
+   
 
 
