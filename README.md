@@ -19,4 +19,5 @@ docker-compose up
 
 ### Google Colab
 
-- [Launch in Colab](https://colab.research.google.com/github/cyprigroup/jrapitest/blob/main/jrnotebooks/JR-API-Documentation.ipynb)
+- [Launch Judge Research API Docs](https://colab.research.google.com/github/cyprigroup/jrapitest/blob/main/jrnotebooks/JR-API-Documentation.ipynb)
+- [Launch Coinalytix API Library](https://colab.research.google.com/github/cyprigroup/jrapitest/blob/main/jrnotebooks/Coinalytix_API_Source.ipynb)
