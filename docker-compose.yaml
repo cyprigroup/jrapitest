@@ -1,6 +1,7 @@
 version: '2.1'
 services:
     jupyter:
+        build: .
         image: docker.io/library/judgeresearch-featurefeeder-dev
         restart: 'no'
         volumes:
