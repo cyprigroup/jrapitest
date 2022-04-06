@@ -2,7 +2,8 @@
 
 ## Local Build & Launch
 
-Install [docker-compose](https://docs.docker.com/compose/install/)
+- Install [docker-compose](https://docs.docker.com/compose/install/)
+- Launch the container:
 ```
 git clone https://github.com/cyprigroup/jrapitest.git
 cd jrapitest
