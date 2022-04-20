@@ -55,3 +55,6 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
+RUN rm -f ${HOME}/README.md
+RUN rm -f ${HOME}/docker-compose.yaml
+RUN rm -f ${HOME}/Dockerfile
