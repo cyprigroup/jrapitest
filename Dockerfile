@@ -29,7 +29,7 @@ RUN set -ex \
    # install coinbase SDK
    && git clone https://github.com/resy/coinbase_python3.git \
    && cd coinbase_python3 \
-   && python3 setup.py install \
+   && python3 setup.py install 
 
 
 # Additions below per MyBinder Dockerfile best practices #3 & #4:
