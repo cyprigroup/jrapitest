@@ -5,7 +5,7 @@ services:
         image: docker.io/library/judgeresearch-featurefeeder-dev
         restart: 'no'
         volumes:
-            - ./jrnotebooks:/home/jovyan/JudgeResearch
+            - ./JudgeResearchNotebooks:/home/jovyan/JudgeResearch
         ports:
             - "8888:8888"
         environment:
