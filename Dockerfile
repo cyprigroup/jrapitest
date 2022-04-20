@@ -29,7 +29,8 @@ RUN set -ex \
    # install coinbase SDK
    && git clone https://github.com/resy/coinbase_python3.git \
    && cd coinbase_python3 \
-   && python3 setup.py install
+   && python3 setup.py install \
+
 
 # Additions below per MyBinder Dockerfile best practices #3 & #4:
 # https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html
@@ -55,6 +56,9 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
+
+# Clean up unnecessary & confusing files
+RUN rm -f ${HOME}/coinbase_python3
 RUN rm -f ${HOME}/README.md
 RUN rm -f ${HOME}/docker-compose.yaml
 RUN rm -f ${HOME}/Dockerfile
