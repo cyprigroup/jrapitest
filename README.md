@@ -15,8 +15,7 @@ docker-compose up
 
 ### MyBinder
 
-- [Launch in MyBinder](https://mybinder.org/v2/gh/cyprigroup/jrapitest/main)
-
+- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cyprigroup/jrapitest/main?labpath=JudgeResearchNotebooks%2FSampleCode.ipynb)
 ### Google Colab
 
 - [Launch Judge Research API Docs](https://colab.research.google.com/github/cyprigroup/jrapitest/blob/main/jrnotebooks/JR-API-Documentation.ipynb)
