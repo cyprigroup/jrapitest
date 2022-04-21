@@ -15,8 +15,8 @@ docker-compose up
 
 ### MyBinder
 
-- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cyprigroup/jrapitest/main?labpath=JudgeResearchNotebooks%2FSampleCode.ipynb)
+- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cyprigroup/jrapitest/main?labpath=JudgeResearchNotebooks%2FFeature_Tutorial.ipynb)
 ### Google Colab
 
-- [Launch Judge Research API Docs](https://colab.research.google.com/github/cyprigroup/jrapitest/blob/main/jrnotebooks/JR-API-Documentation.ipynb)
-- [Launch Coinalytix API Library](https://colab.research.google.com/github/cyprigroup/jrapitest/blob/main/jrnotebooks/Coinalytix_API_Source.ipynb)
+- [Launch Judge Research API Docs](https://colab.research.google.com/github/cyprigroup/jrapitest/blob/main/JudgeResearchNotebooks/JR-API-Documentation.ipynb)
+- [Launch Judge Research Feature Building Tutorial](https://colab.research.google.com/github/cyprigroup/jrapitest/blob/main/JudgeResearchNotebooks/Feature_Tutorial.ipynb)
