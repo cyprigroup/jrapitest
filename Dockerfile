@@ -16,6 +16,9 @@ RUN set -ex \
    # choose the Python packages you need
    'plotly==5.7.0' \
    'folium==0.12.1.post1' \
+   'rise' \
+   'TA-Lib' \
+   'pandas-ta' \
    'yfinance==0.1.70' \
    && conda clean --all -f -y \
    # install Jupyter Lab extensions you need
