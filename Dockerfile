@@ -60,6 +60,9 @@ USER root
 RUN chown -R ${NB_UID}:users ${HOME}
 USER ${NB_USER}
 
+# Import the workspace with preconfigured tabs
+RUN jupyter lab workspaces import JudgeResearchNotebooks/default_workspaces.json
+
 # Clean up unnecessary & confusing files
 RUN rm -rf ${HOME}/coinbase_python3
 RUN rm -f ${HOME}/README.md
