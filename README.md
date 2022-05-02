@@ -1,6 +1,6 @@
 # Usage
 
-## Local Build & Launch
+## Build & Launch Your Own
 
 - Install [docker-compose](https://docs.docker.com/compose/install/)
 - Launch the container:
