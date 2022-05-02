@@ -22,6 +22,7 @@ RUN set -ex \
    'pandas-datareader' \
    'yfinance==0.1.70' \
    'alpha_vantage' \
+   'jupyterthemes' \
    && conda clean --all -f -y \
    # install Jupyter Lab extensions you need
    && jupyter labextension install jupyterlab-plotly --no-build \
