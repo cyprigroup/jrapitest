@@ -1,11 +1,12 @@
 from datetime import datetime
 
+import pandas as pd
 import requests
 
 
 class HDParams:
     """
-    Collect asset information
+    Historical data parameters
     """
 
     def __init__(
@@ -24,6 +25,7 @@ class HDParams:
         self.num_periods = num_periods
 
     def set_start_date(self, datestr):
+        """format the start date string for Coinalytix"""
         self.start_date = datetime.fromisoformat(datestr)
 
 
@@ -37,9 +39,11 @@ class Coinalytix:
         self.api_key = ""
 
     def with_api_key(self, key):
+        """set API key for Coinalytix authentication"""
         self.api_key = key
 
     def fetch_hd(self, asset):
+        """fetch historical data dictionary"""
         _url = (
             self.url_root
             + "api_key="
@@ -60,7 +64,17 @@ class Coinalytix:
         if r.status_code == 200:
             _json = r.json()
             data = _json["data"]
-            return data
+
+            # convert dict to pandas df
+            hddf = pd.DataFrame.from_dict(data)
+
+            # set DateTimeIndex
+            hddf.set_index(
+                pd.DatetimeIndex(hddf["StartDate"] * 1000000000), inplace=True
+            )
+
+            return hddf
+
         else:
             print("Error fetching data")
             return r.text

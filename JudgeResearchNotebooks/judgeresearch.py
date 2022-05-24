@@ -1,7 +1,7 @@
 from datetime import datetime
 
-
 import requests
+
 
 class JRParams:
     """
@@ -38,12 +38,30 @@ class JudgeResearch:
         self.api_key = ""
 
     def with_api_key(self, key):
+        """set API key for Judge Research authentication"""
         self.api_key = key
         self.headers = {"x-api-key": key}
 
     def fmt_time(self, timestamp):
         """format time per API doc"""
         return datetime.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    def craft_features(self, default_params, df):
+        """
+        create a list of features from a feature dataframe and default
+        parameters
+        """
+        _features = []
+        for index, row in df.iterrows():
+            _jrparams = JRParams(default_params)
+            _jrparams.attribute = index.strftime("%Y-%m-%dT%H:%M:%SZ")
+            _jrparams.dv = default_params.dv
+            _jrparams.mbs = default_params.mbs
+            _jrparams.feature_name = default_params.feature_name
+            _jrparams.value = row["feature"]
+            _jrparams.ipp = default_params.ipp
+            _features.append(_jrparams)
+        return _features
 
     def format_payload(self, features):
         """Accepts list of jrparam objects and generates JSON payload"""
@@ -62,5 +80,6 @@ class JudgeResearch:
         return data
 
     def submit_feature(self, data):
+        """send formatted payload to Judge Research GA"""
         featureupdate = requests.put(self.url, headers=self.headers, json=data)
         return featureupdate
