@@ -8,7 +8,7 @@ import pandas_ta as ta
 import time
 from watchlist import colors
 
-# set api keys
+# set api keys - PASTE stanza 2 here
 CA_API_KEY = "<paste your coinalytix.io key here>"
 JR_API_KEY = "hHV1QUTclB653YLvFJBJh5Pz0BayF251at64c9x9"
 
@@ -17,7 +17,7 @@ JR_API_KEY = "hHV1QUTclB653YLvFJBJh5Pz0BayF251at64c9x9"
 FIRSTDELAY = 0.50
 SECONDDELAY = 0.90
 
-# set asset
+# set asset - PASTE stanza 3 here
 asset = HDParams()
 asset.exchange = "BINANCE"
 asset.ticker = "BTC-USD-SPOT"
@@ -27,7 +27,7 @@ asset.num_periods = 365
 
 df = None
 
-# replace with your feature generation function
+# replace with your feature generation function - PASTE stanza 5 here
 def feature_gen(df):
     ''' Set feature column to 1 or 0 as MACD crosses MACDs '''
     macddf = df.ta.macd(fast=8, slow=21, signal=9, min_periods=None, append=True)
@@ -35,7 +35,7 @@ def feature_gen(df):
     macddf["feature"] = ['0' if x > 0 else '1' for x in macddf['macdiff']]
     return macddf
 
-# set feature parameters
+# set feature parameters - PASTE stanza 8 here
 ft_params = JRParams()
 ft_params.attribute = "2022-01-01T00:00:00Z" # default value
 ft_params.dv = "BTC-USD"
