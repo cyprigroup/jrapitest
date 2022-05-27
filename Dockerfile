@@ -19,7 +19,7 @@ RUN set -ex \
    'rise==5.7.1' \
    'TA-Lib==0.4.19' \
    'pandas-ta==0.3.14b' \
-   'pandas-datareaderi==0.10.0' \
+   'pandas-datareader==0.10.0' \
    'yfinance==0.1.70' \
    'alpha_vantage==2.3.1' \
    'jupyterthemes==0.20.0' \
