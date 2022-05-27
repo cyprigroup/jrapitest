@@ -5,6 +5,8 @@ MBS = 46
 GENESIS = "2022-01-01T00:00:00Z"
 MINBEFORE = 10
 
+# set the path to your SDK install below
+COMMAND = "/usr/local/bin/docker-compose -f /path/to/judgeresearchsdk/docker-compose.yaml run jupyter /opt/conda/bin/python /home/jovyan/JudgeResearchNotebooks/headless.py &> jrcron.out"
 
 import os
 from datetime import date, datetime, timedelta
@@ -29,7 +31,7 @@ print("Next Block End: " + deadline.strftime("%Y-%m-%dT%H:%M:%SZ"))
 remaining = deadline - now
 
 if remaining.total_seconds() / 60 == MINBEFORE:
-    os.system("python3 /home/joyvan/JudgeResearchNotebooks/headless.py")
+    os.system(COMMAND)
     print(
         "Ran headless script with: "
         + str(remaining.total_seconds() / 60)
