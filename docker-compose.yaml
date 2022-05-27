@@ -3,6 +3,7 @@ services:
     jupyter:
         build: .
         image: docker.io/library/judgeresearch-featurefeeder-dev
+        container_name: jrnotebook
         restart: 'no'
         volumes:
             - ./JudgeResearchNotebooks:/home/jovyan/JudgeResearchEditable
